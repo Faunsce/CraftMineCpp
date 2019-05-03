@@ -16,6 +16,9 @@
   <ItemGroup>
     <ClInclude Include="Dependencies\GLFW\include\glfw3.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\basic.shader" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4F61115C-8111-48D0-9896-A61EC5E29E08}</ProjectGuid>
