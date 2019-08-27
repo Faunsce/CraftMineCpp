@@ -8,7 +8,7 @@
 
 #ifdef _WIN64
 	#define DEBUG_BREAK __debugbreak()
-#elif
+#else
 	#define DEBUG_BREAK raise(SIGTRAP)
 #endif
 
