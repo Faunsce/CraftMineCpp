@@ -7,11 +7,12 @@
 #include <sstream>
 
 #ifdef _WIN64
-	#define ASSERT(x) if (!(x)) __debugbreak();
-#else
-	#warning "No support for this code outside of windows"
+	#define DEBUG_BREAK __debugbreak()
+#elif
+	#define DEBUG_BREAK raise(SIGTRAP)
 #endif
 
+#define ASSERT(x) if (!(x)) DEBUG_BREAK;
 #define GLCall(x) GLClearError();\
 	x;\
 	ASSERT(GLLogCall(#x, __FILE__, __LINE__))
