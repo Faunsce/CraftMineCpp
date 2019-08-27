@@ -6,7 +6,12 @@
 #include <string>
 #include <sstream>
 
-#define ASSERT(x) if (!(x)) __debugbreak();
+#ifdef _WIN64
+	#define ASSERT(x) if (!(x)) __debugbreak();
+#else
+	#warning "No support for this code outside of windows"
+#endif
+
 #define GLCall(x) GLClearError();\
 	x;\
 	ASSERT(GLLogCall(#x, __FILE__, __LINE__))
